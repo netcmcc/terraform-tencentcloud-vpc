@@ -5,15 +5,10 @@ Terraform module to provision a VPC with NAT Gateway on Tencent Cloud. Support c
 ## Example
 
 ```hcl
-provider "tencentcloud" {
-  region = "ap-guangzhou"
-}
-
 module "vpc" {
-  source = "../../"
+  source = "github.com/wootile/terraform-tencentcloud-vpc"
 
   enabled  = true
-
   vpc_name = "chenming-gz"
   vpc_cidr = "172.20.0.0/16"
 
@@ -24,6 +19,19 @@ module "vpc" {
 
   tags = {
     "onwer" = "chenming"
+  }
+}
+
+provider "tencentcloud" {
+  region = "ap-guangzhou"
+}
+
+terraform {
+  required_providers {
+    tencentcloud = {
+      source  = "tencentcloudstack/tencentcloud"
+      version = ">= 1.81"
+    }
   }
 }
 ```
