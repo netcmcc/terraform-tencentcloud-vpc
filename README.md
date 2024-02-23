@@ -74,7 +74,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of available zones to launch resources. | `list(string)` | `[]` | no |
 | <a name="input_enable_nat_gateway"></a> [enable\_nat\_gateway](#input\_enable\_nat\_gateway) | Should be true if you want to provision NAT Gateways. | `bool` | `true` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | n/a | `bool` | `true` | no |
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_eni_subnet_cidrs"></a> [eni\_subnet\_cidrs](#input\_eni\_subnet\_cidrs) | Specify the Pod subnet cidr blocks. | `list(string)` | `[]` | no |
 | <a name="input_nat_eip_max_bandwidth"></a> [nat\_eip\_max\_bandwidth](#input\_nat\_eip\_max\_bandwidth) | Set the maximum bandwidth of the EIP associated with the NAT gateway. | `number` | `100` | no |
 | <a name="input_subnet_cidrs"></a> [subnet\_cidrs](#input\_subnet\_cidrs) | Specify the subnet cidr blocks. | `list(string)` | `[]` | no |
