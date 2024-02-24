@@ -64,5 +64,4 @@ variable "nat_eip_max_bandwidth" {
   description = "Set the maximum bandwidth of the EIP associated with the NAT gateway."
   type        = number
   default     = 100
-
 }
