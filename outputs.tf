@@ -1,11 +1,11 @@
 output "vpc_id" {
   description = "The id of vpc."
-  value       = tencentcloud_vpc.this.*.id
+  value       = try(tencentcloud_vpc.this.0.id, null)
 }
 
 output "vpc_cidr" {
   description = "The CIDR block of vpc."
-  value       = tencentcloud_vpc.this.*.cidr_block
+  value       = try(tencentcloud_vpc.this.0.cidr_block, null)
 }
 
 output "subnet_ids" {
@@ -20,7 +20,7 @@ output "eni_subnet_ids" {
 
 output "route_table_id" {
   description = "The id of route table."
-  value       = tencentcloud_route_table.this.*.id
+  value       = try(tencentcloud_route_table.this.0.id, null)
 }
 
 output "availability_zones" {
@@ -29,6 +29,6 @@ output "availability_zones" {
 }
 
 output "nat_gateway_eip" {
-  value       = tencentcloud_eip.nat_eip.*.public_ip
+  value       = try(tencentcloud_eip.nat_eip.0.public_ip, null)
   description = "The EIP address associated with the NAT gateway."
 }
